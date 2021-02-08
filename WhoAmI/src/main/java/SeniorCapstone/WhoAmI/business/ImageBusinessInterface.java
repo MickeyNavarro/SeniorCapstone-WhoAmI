@@ -1,6 +1,7 @@
 //Almicke Navarro 
-//CST-452 
-//
+//CST-323
+//January 23, 2020 
+//I used the source code from the following website: https://github.com/MickeyNavarro/ArtistWebsiteV3
 
 package SeniorCapstone.WhoAmI.business;
 

@@ -1,9 +1,7 @@
 //Almicke Navarro 
 //CST-323
-//January 12, 2020 
-//I used the source code from the following website: https://github.com/MickeyNavarro/ArtistWebsiteV3/blob/master/src/com/business/EventBusinessService.java
-
-//SongBusinessService will persist any CRUD operations to the data service
+//January 23, 2020 
+//I used the source code from the following website: https://github.com/MickeyNavarro/ArtistWebsiteV3
 
 package SeniorCapstone.WhoAmI.business;
 

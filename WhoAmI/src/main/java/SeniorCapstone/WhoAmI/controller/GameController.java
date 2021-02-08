@@ -1,5 +1,7 @@
-//https://www.codejava.net/frameworks/spring-boot/upload-multiple-files-example
-
+//Almicke Navarro 
+//CST-323
+//January 12, 2020 
+//I used the source code from the following website: https://www.codejava.net/frameworks/spring-boot/upload-multiple-files-example
 
 package SeniorCapstone.WhoAmI.controller;
 
