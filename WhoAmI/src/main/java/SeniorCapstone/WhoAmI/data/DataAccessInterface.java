@@ -1,0 +1,15 @@
+package SeniorCapstone.WhoAmI.data;
+
+public interface DataAccessInterface<T> {
+		//create will be used to create a new type of object to the database
+		public boolean create(T t); 
+		
+		//read will be used to read a type of object  from the database
+		public T read(int id); 
+		
+		//update will be used to update a type of object  in the the database - out of scope
+		public boolean update(T t); 
+		
+		//delete will be used to delete a type of object from the database - out of scope
+		public boolean delete(int id);  
+}
