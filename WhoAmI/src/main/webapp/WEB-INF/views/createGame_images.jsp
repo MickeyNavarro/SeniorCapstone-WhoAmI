@@ -40,6 +40,8 @@
 			</table>
 			<input class="formButton createButton" type="submit" value="Next">
 		</form:form>
+		
+		<p><font color="red">${error}</font></p>
 	</div>
 </body>
 </html>

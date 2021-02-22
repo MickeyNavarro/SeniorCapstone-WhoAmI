@@ -68,10 +68,7 @@ public class GameController {
 			theGame = new GameBoard(gameboard.getSize()); 
 			
 			//create a new gamebundle
-			GameBundle gameBundle = new GameBundle();
-			
-			//create a modelandview 
-			ModelAndView imagesMV = new ModelAndView("createGame_images", "gameBundle",gameBundle); 
+			//GameBundle gameBundle = new GameBundle();
 			
 			//create a size object
 			int numOfImages = theGame.getSize() * theGame.getSize(); 
@@ -85,10 +82,13 @@ public class GameController {
 			}
 			
 			//set the list
-			gameBundle.setImages(listOfImages);
+			theGameBundle.setImages(listOfImages);
 			
 			//add the object to the imagesMV
 			//imagesMV.addObject("listOfImages", listOfImages); 
+			
+			//create a modelandview 
+			ModelAndView imagesMV = new ModelAndView("createGame_images", "gameBundle",theGameBundle); 
 					
 			//return to the upload images form 
 			return imagesMV;
@@ -111,7 +111,7 @@ public class GameController {
 			if(result.hasErrors()) { 
 				
 				//return to upload images form to show any game creation errors
-				return new ModelAndView("createGame_images", "gameBundle", gameBundle); 
+				return new ModelAndView("createGame_images", "gameBundle", theGameBundle); 
 			}
 			
 			try {
@@ -119,7 +119,7 @@ public class GameController {
 		        List<Image> images = gameBundle.getImages(); 
 		        
 		        //check if the list of images is not empty or null 
-		        if (null != images && images.size() > 0) 
+		        if (images !=null && images.size() > 0) 
 		        {
 		        	
 		        	//for each image in the list of images
@@ -143,17 +143,30 @@ public class GameController {
 		                    throw new IOException("Could not save image file: " + fileName, ioe); 
 		                }  
 		            }
+			        return new ModelAndView("createGame_username");
 
-		        }	
+		        }
+		        else {
+		        	//create a modelandview 
+					ModelAndView errorMV = new ModelAndView("createGame_images", "gameBundle", theGameBundle); 
+					
+					//create a error message 
+					String errorMessage = "Whoops! There was an error! There were no images uploaded!"; 
+
+					//create an object to output the error 
+					errorMV.addObject("error", errorMessage); 
+
+					//output error to errorPage
+					return errorMV;
+		        }
 		        
-		        return new ModelAndView("createGame_username");
 	        } 
 			//catch all exceptions 
 			catch (Exception e) {
 				System.out.println("Error in uploading images! Exception message: " + e.getMessage());
 				
 				//return to upload images form to show any game creation errors
-				return new ModelAndView("createGame_images", "gameBundle", gameBundle); 
+				return new ModelAndView("createGame_images", "gameBundle", theGameBundle); 
 					
 			}
 								
