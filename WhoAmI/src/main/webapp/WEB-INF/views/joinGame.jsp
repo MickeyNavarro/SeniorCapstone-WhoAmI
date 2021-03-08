@@ -8,6 +8,8 @@
 <title>Join Game</title>
 </head>
 <body>
+	<div class= "center">
+	<img src="resources/assets/img/HeaderPhoto.png" alt="Header photo of different faces" class="header-photo">
 	<form:form method="POST" modelAttribute="user" action="joinGameSuccess">
 		<table>
 			<tr>
@@ -26,5 +28,6 @@
 					type="submit" value="Join Game"></td>
 		</table>
 	</form:form>
+	</div>
 </body>
 </html>

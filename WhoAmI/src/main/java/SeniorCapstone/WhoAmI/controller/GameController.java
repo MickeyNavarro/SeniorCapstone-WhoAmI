@@ -1,7 +1,7 @@
 //Almicke Navarro 
 //CST-323
 //January 12, 2020 
-//I used the source code from the following website: https://www.codejava.net/frameworks/spring-boot/upload-multiple-files-example
+//I used the source code from the following website: https://www.codejava.net/frameworks/spring-boot/upload-multiple-files-example, https://github.com/Artur-Wisniewski/minesweeper 
 
 package SeniorCapstone.WhoAmI.controller;
 
@@ -32,7 +32,6 @@ import SeniorCapstone.WhoAmI.model.Image;
 
 @Controller
 public class GameController {
-	
 	//initialize gameboard 
 	private static GameBoard theGame = new GameBoard();
 	
@@ -143,7 +142,6 @@ public class GameController {
 		                    throw new IOException("Could not save image file: " + fileName, ioe); 
 		                }  
 		            }
-			        return new ModelAndView("createGame_username");
 
 		        }
 		        else {
@@ -159,6 +157,9 @@ public class GameController {
 					//output error to errorPage
 					return errorMV;
 		        }
+		        
+		        return new ModelAndView("createGame_username");
+
 		        
 	        } 
 			//catch all exceptions 
@@ -177,9 +178,7 @@ public class GameController {
 	public ModelAndView displayJoinGamePage(HttpServletResponse response) throws IOException{
 		return new ModelAndView("joinGame");
 	}
-	
-	//method to deal with click action 
-	
+		
 	//method to display game page - must be accessed via CreateGame or JoinGame
 	@RequestMapping(value="/gamePage", method=RequestMethod.POST)
 			public ModelAndView displayMainGamePage(@ModelAttribute("gameBundle") GameBundle gameBundle, BindingResult result) throws IOException{
@@ -208,6 +207,8 @@ public class GameController {
 									
 		}
 	
+
+	//method to deal with click action 
 
 	//method to display the winner page which indicates game completion 
 
