@@ -15,11 +15,8 @@
 </head>
 <body>
 	<div class= "center">
-	    	<h1>Who Am I?</h1>
-	    	<img src="resources/assets/img/header-photo1.png" alt="Header photo of different faces">
-	       	<br/><br/><br/><br/> <!-- temp to avoid overlapping -->
-	</div>
-	<div class= "center">
+	    	<img src="resources/assets/img/HeaderPhoto.png" alt="Header photo of different faces" class="header-photo">
+
 		<h2>Create Game</h2>
 		<form:form method="POST" modelAttribute="gameBundle" action="createGame-enterUsername" enctype="multipart/form-data">
 			<h4>Upload your images</h4>

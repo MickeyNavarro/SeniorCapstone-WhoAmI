@@ -15,12 +15,13 @@
     </head>
     <body>
 	    <div class= "center">
-	    	<h1>Who Am I?</h1>
-	    	<img src="resources/assets/img/header-photo1.png" alt="Header photo of different faces">
-	       	<br/><br/><br/><br/> <!-- temp to avoid overlapping -->
+	    	<img src="resources/assets/img/HeaderPhoto.png" alt="Header photo of different faces" class="header-photo">
+	    	<br/><br/><br/> <!-- temp to avoid overlapping -->
+	    <div class="middle">
 	        <a href="createGame-chooseSize" class="button createButton">Create Game</a>
 	       	<br/><br/><br/> <!-- temp to avoid overlapping -->
 	        <a href="joinGame" class="button joinButton">Join Game</a>
+	    </div>
 	    </div>
     </body>
 </html>
